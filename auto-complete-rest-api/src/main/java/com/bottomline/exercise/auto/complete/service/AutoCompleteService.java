@@ -27,12 +27,7 @@ public class AutoCompleteService {
 		return this.trieDS.suggest(prefix);
 	}
 	
-	/*I've come to the conclusion that Trie algorithm is not O(K) even with cache 
-	 * so i tried to figure a simple solution where the performance will be O(1)
-	 * im aware about the complexity of that function on the first run (O(N**2)) 
- 	 * And there can be a large number of words.
- 	 * -this solution is case sensitive-
-	 */
+	
 	public List<String> autoCompleteWithoutAlgorithm(String prefix){
 		if(this.cache == null) {
 			this.cache = new HashMap<String,List<String>>();
